@@ -1,0 +1,17 @@
+@import "../../../styles/index.sass"
+
+$light: #fff
+$borderRadius: 12px
+
+.wrap
+  a
+    text-decoration: none
+    color: inherit
+    padding: 0.75rem 1.25rem
+    border-radius: $borderRadius
+    transition: 0.3s ease all
+    &:hover
+      background: rgba($light, 0.1)
+    &:active
+      border-radius: calc(#{$borderRadius} + 6px)
+      background: linear-gradient(rgba($light, 0.1), rgba($light, 0.2))

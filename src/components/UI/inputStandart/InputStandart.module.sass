@@ -1,0 +1,43 @@
+@import "./../../../styles/variables.sass"
+@import "../../../styles/fonts.sass"
+
+.customInput
+  position: relative
+  width: 100%
+
+.inputLabel
+  color: #8d8d8d
+  font-size: 12px
+  font-weight: 500
+  line-height: 20px
+  position: absolute
+  top: 20px
+  left: 0
+  transform: translateY(-100%)
+  pointer-events: none
+  transition: color 0.3s, font-size 0.3s, transform 0.3s
+
+.input__box
+  margin-top: 16px
+
+  .inputField
+    width: 100%
+    border: none
+    border-bottom: 1px solid #8d8d8d
+    outline: none
+    font-size: 12px
+    font-weight: 500
+    line-height: 20px
+    color: #000
+    transition: color 0.3s, font-size 0.3s
+    padding-bottom: 10px
+    padding-top: 5px
+    background: inherit
+  span
+    font-size: 12px
+    font-weight: 500
+    line-height: 20px
+    padding: 3px
+    color: red
+.errorLabel
+  color: red

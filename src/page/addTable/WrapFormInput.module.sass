@@ -1,0 +1,26 @@
+@import "../../styles/index.sass"
+
+.title
+  padding-bottom: 30px
+  font-size: 20px
+
+.wrapInput
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  grid-gap: 50px 40px
+  @include adaptivPadding($pcSize: 45, $mobSize: 20,$mode: 3)
+  @include breakpoint($point: 2)
+    grid-template-columns: 1fr
+    grid-gap: 20px
+
+.text__error
+  @include error__text
+
+.btn__wrap
+  display: flex
+  gap: 30px
+  align-items: center
+
+.birthday
+  display: flex
+  justify-content: space-between

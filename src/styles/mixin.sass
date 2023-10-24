@@ -1,0 +1,141 @@
+
+@mixin containerGlobal
+  max-width: 1440px
+  margin: 0 auto
+  padding: 0 25px
+  @include breakpoint($point: 2)
+    padding: 0 15px
+
+@mixin paper__rounding
+  border: 1px solid #e0e0e0
+  border-radius: 12px
+  background: #fff
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 20px 0px
+  padding: 26px
+
+@mixin paper__sharp
+  border: 1px solid #e0e0e0
+  border-radius: 0
+  background: #fff
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 20px 0px
+  padding: 26px
+
+@mixin typografy__h1
+  font-size: 2rem
+  font-weight: bold
+  color: #000000
+
+@mixin typografy__h2
+  font-size: 1.5rem
+  font-weight: bold
+  color: #000000
+
+@mixin typografy__h3
+  font-size: 1.17rem
+  font-weight: bold
+  color: #000000
+
+@mixin typografy__h4
+  font-size: 1rem
+  font-weight: bold
+  color: #000000
+
+@mixin typografy__h5
+  font-size: 0.83rem
+  font-weight: bold
+  color: #000000
+
+@mixin typografy__h6
+  font-size: 0.67rem
+  font-weight: bold
+  color: #000000
+
+@mixin typografy__subtitle1
+  font-size: 1rem
+  font-weight: normal
+  color: #000000
+
+@mixin typografy__subtitle2
+  font-size: 0.83rem
+  font-weight: normal
+  color: #000000
+
+@mixin typografy__body1
+  font-size: 1rem
+  font-weight: normal
+  color: #000000
+
+@mixin typografy__body2
+  font-size: 0.83rem
+  font-weight: normal
+  color: #000000
+
+@mixin typografy__caption
+  font-size: 0.67rem
+  font-weight: normal
+  color: #000000
+
+@mixin typografy__overline
+  font-size: 0.67rem
+  font-weight: bold
+  text-transform: uppercase
+  color: #000000
+
+@mixin error__text
+  font-size: 12px
+  line-height: 20px
+  padding: 3px
+  color: red
+
+// breakpoints
+@mixin breakpoint($point)
+  @if $point == zero
+    @media (max-width: ($point_zer + px))
+      @content
+
+  @else if $point == 5
+    @media (max-width: ($point_5 + px))
+      @content
+
+  @else if $point == 4
+    @media (max-width: ($point_4 + px))
+      @content
+
+  @else if $point == 3
+    @media (max-width: ($point_3 + px))
+      @content
+
+  @else if $point == 2
+    @media (max-width: ($point_2 + px))
+      @content
+
+  @else if $point == 1
+    @media (max-width: ($point_1 + px))
+      @content
+
+//padding лінійна інтерполяція
+@mixin adaptiv-padding($pcSize, $mobSize,$point,$mode)
+  $addSize: $mobSize - $pcSize
+  $addSize2: $point - $w_max
+  $aa: calc(($addSize2)*($addSize)/(360 - $w_max))+$pcSize
+  @if $mode == 1
+    padding-top: #{$aa+px}
+  @if $mode == 2
+    padding-right: #{$aa+px}
+  @if $mode == 3
+    padding-bottom: #{$aa+px}
+  @if $mode == 4
+    padding-left: #{$aa+px}
+
+@mixin adaptivPadding($pcSize, $mobSize,$mode)
+  @include adaptiv-padding($pcSize,$mobSize,$point_zero,$mode)
+  @media (max-width: $point_5+px)
+    @include adaptiv-padding($pcSize,$mobSize,$point_5,$mode)
+  @media (max-width: $point_4+px)
+    @include adaptiv-padding($pcSize,$mobSize,$point_4,$mode)
+  @media (max-width: $point_3+px)
+    @include adaptiv-padding($pcSize,$mobSize,$point_3,$mode)
+  @media (max-width: $point_2+px)
+    @include adaptiv-padding($pcSize,$mobSize,$point_2,$mode)
+  @media (max-width: $point_1+px)
+    @include adaptiv-padding($pcSize,$mobSize,$point_1,$mode)

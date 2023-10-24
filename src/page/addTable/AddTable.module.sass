@@ -1,0 +1,34 @@
+@import "../../styles/index.sass"
+
+.container
+  max-width: 600px
+  margin: 0 auto
+  padding-top: 25px
+  padding-right: 20px
+  padding-left: 20px
+
+.form__body
+  padding-top: 30px
+  display: flex
+  gap: 30px
+  flex-direction: column
+
+.wrapInput
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  grid-gap: 50px 40px
+  @include adaptivPadding($pcSize: 45, $mobSize: 20,$mode: 3)
+  @include breakpoint($point: 2)
+    grid-template-columns: 1fr
+    grid-gap: 20px
+.wrapRadio
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+  gap: 10px
+
+  @include breakpoint($point: 2)
+    grid-template-columns: repeat(2, 1fr)
+
+.text__error
+  @include error__text
+  display: block
